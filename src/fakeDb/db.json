@@ -1,0 +1,6 @@
+[
+  { "id": "1", "purpose": "Job proposition", "firstName": "Dima", "lastName": "vab", "gender": "male" },
+  { "id": "2", "purpose": "Job proposition", "firstName": "Vit", "lastName": "vab", "gender": "male" },
+  { "id": "3", "purpose": "Review", "firstName": "Inna", "lastName": "Moroz", "gender": "female" },
+  { "id": "4", "purpose": "Another", "firstName": "Asan", "lastName": "Moroz", "gender": "male" }
+]

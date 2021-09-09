@@ -1,0 +1,158 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reqest Page loading should render cases Reqest page 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Request>
+    <main
+      className="home"
+    >
+      <Container
+        tag="div"
+      >
+        <div
+          className="container"
+        >
+          <Row
+            tag="div"
+            widths={
+              Array [
+                "xs",
+                "sm",
+                "md",
+                "lg",
+                "xl",
+              ]
+            }
+          >
+            <div
+              className="row"
+            >
+              <Col
+                className="d-flex justify-content-end"
+                tag="div"
+                widths={
+                  Array [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                  ]
+                }
+              >
+                <div
+                  className="d-flex justify-content-end col"
+                >
+                  <LinkButton
+                    label="Return to the list requests"
+                    link="/"
+                  >
+                    <Button
+                      dangerDescription="danger"
+                      data-testid="LinkButton"
+                      disabled={false}
+                      isExpressive={false}
+                      kind="ghost"
+                      onClick={[Function]}
+                      renderIcon={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "render": [Function],
+                        }
+                      }
+                      size="default"
+                      tabIndex={0}
+                      tooltipAlignment="center"
+                      tooltipPosition="top"
+                      type="button"
+                    >
+                      <button
+                        aria-describedby={null}
+                        aria-pressed={null}
+                        className="bx--btn bx--btn--ghost"
+                        data-testid="LinkButton"
+                        disabled={false}
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
+                        type="button"
+                      >
+                        Return to the list requests
+                        <ForwardRef(Undo32)
+                          aria-hidden="true"
+                          className="bx--btn__icon"
+                        >
+                          <Icon
+                            aria-hidden="true"
+                            className="bx--btn__icon"
+                            fill="currentColor"
+                            height={32}
+                            preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 32 32"
+                            width={32}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <svg
+                              aria-hidden={true}
+                              className="bx--btn__icon"
+                              fill="currentColor"
+                              focusable="false"
+                              height={32}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 32 32"
+                              width={32}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M20,10H7.8149l3.5874-3.5859L10,5,4,11,10,17l1.4023-1.4146L7.8179,12H20a6,6,0,0,1,0,12H12v2h8a8,8,0,0,0,0-16Z"
+                              />
+                            </svg>
+                          </Icon>
+                        </ForwardRef(Undo32)>
+                      </button>
+                    </Button>
+                  </LinkButton>
+                </div>
+              </Col>
+            </div>
+          </Row>
+        </div>
+      </Container>
+      <LoadTable
+        data={null}
+      >
+        <div
+          className="d-flex align-items-center justify-content-center"
+        >
+          <SpinnerCs>
+            <div
+              className="spinner-border text-primary"
+              role="status"
+            >
+              <span
+                className="visually-hidden"
+              >
+                Loading...
+              </span>
+            </div>
+          </SpinnerCs>
+        </div>
+      </LoadTable>
+    </main>
+  </Request>
+</Provider>
+`;

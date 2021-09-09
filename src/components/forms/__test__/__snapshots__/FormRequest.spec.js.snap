@@ -1,0 +1,730 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormRequest should create shanapshot 1`] = `
+<FormRequest
+  action={[Function]}
+  initialData={
+    Object {
+      "firstName": "Vit",
+      "gender": "male",
+      "id": "2",
+      "lastName": "vab",
+      "purpose": "Job proposition",
+    }
+  }
+  title="Test title"
+>
+  <Container
+    className="form"
+    tag="div"
+  >
+    <div
+      className="form container"
+    >
+      <h2
+        className="form__title"
+      >
+        Test title
+      </h2>
+      <ReactFinalForm
+        initialValues={
+          Object {
+            "firstName": "Vit",
+            "gender": "male",
+            "id": "2",
+            "lastName": "vab",
+            "purpose": "Job proposition",
+          }
+        }
+        onSubmit={[Function]}
+        render={[Function]}
+        validate={[Function]}
+      >
+        <form
+          data-testid="form"
+          onSubmit={[Function]}
+        >
+          <Row
+            tag="div"
+            widths={
+              Array [
+                "xs",
+                "sm",
+                "md",
+                "lg",
+                "xl",
+              ]
+            }
+          >
+            <div
+              className="row"
+            >
+              <Col
+                className="col-md-12"
+                tag="div"
+                widths={
+                  Array [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                  ]
+                }
+              >
+                <div
+                  className="col-md-12 col"
+                >
+                  <ForwardRef(Field)
+                    name="purpose"
+                  >
+                    <div
+                      className="form__field"
+                    >
+                      <Select
+                        data-testid="purpose-select"
+                        disabled={false}
+                        helperText=""
+                        id="select-1"
+                        inline={false}
+                        invalid={false}
+                        invalidText="This is an invalid error message."
+                        labelText="Select purpose of the request"
+                        light={false}
+                        name="purpose"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        required={true}
+                        value="Job proposition"
+                      >
+                        <div
+                          className="bx--form-item"
+                        >
+                          <div
+                            className="bx--select"
+                          >
+                            <label
+                              className="bx--label"
+                              htmlFor="select-1"
+                            >
+                              Select purpose of the request
+                            </label>
+                            <div
+                              className="bx--select-input__wrapper"
+                              data-invalid={null}
+                            >
+                              <select
+                                className="bx--select-input"
+                                data-testid="purpose-select"
+                                id="select-1"
+                                name="purpose"
+                                onBlur={[Function]}
+                                onChange={[Function]}
+                                onFocus={[Function]}
+                                required={true}
+                                value="Job proposition"
+                              >
+                                <SelectItem
+                                  disabled={true}
+                                  hidden={false}
+                                  text="Job proposition"
+                                  value="Job proposition"
+                                >
+                                  <option
+                                    className="bx--select-option"
+                                    disabled={true}
+                                    hidden={false}
+                                    value="Job proposition"
+                                  >
+                                    Job proposition
+                                  </option>
+                                </SelectItem>
+                                <SelectItem
+                                  disabled={false}
+                                  hidden={false}
+                                  key="Job proposition"
+                                  text="Job proposition"
+                                  value="Job proposition"
+                                >
+                                  <option
+                                    className="bx--select-option"
+                                    disabled={false}
+                                    hidden={false}
+                                    value="Job proposition"
+                                  >
+                                    Job proposition
+                                  </option>
+                                </SelectItem>
+                                <SelectItem
+                                  disabled={false}
+                                  hidden={false}
+                                  key="Review"
+                                  text="Review"
+                                  value="Review"
+                                >
+                                  <option
+                                    className="bx--select-option"
+                                    disabled={false}
+                                    hidden={false}
+                                    value="Review"
+                                  >
+                                    Review
+                                  </option>
+                                </SelectItem>
+                                <SelectItem
+                                  disabled={false}
+                                  hidden={false}
+                                  key="Another"
+                                  text="Another"
+                                  value="Another"
+                                >
+                                  <option
+                                    className="bx--select-option"
+                                    disabled={false}
+                                    hidden={false}
+                                    value="Another"
+                                  >
+                                    Another
+                                  </option>
+                                </SelectItem>
+                              </select>
+                              <ForwardRef(ChevronDown16)
+                                className="bx--select__arrow"
+                              >
+                                <Icon
+                                  className="bx--select__arrow"
+                                  fill="currentColor"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  viewBox="0 0 16 16"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <svg
+                                    aria-hidden={true}
+                                    className="bx--select__arrow"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height={16}
+                                    preserveAspectRatio="xMidYMid meet"
+                                    viewBox="0 0 16 16"
+                                    width={16}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                                    />
+                                  </svg>
+                                </Icon>
+                              </ForwardRef(ChevronDown16)>
+                            </div>
+                          </div>
+                        </div>
+                      </Select>
+                    </div>
+                  </ForwardRef(Field)>
+                </div>
+              </Col>
+            </div>
+          </Row>
+          <Row
+            tag="div"
+            widths={
+              Array [
+                "xs",
+                "sm",
+                "md",
+                "lg",
+                "xl",
+              ]
+            }
+          >
+            <div
+              className="row"
+            >
+              <Col
+                className="form__field col-sm-6 col-12"
+                tag="div"
+                widths={
+                  Array [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                  ]
+                }
+              >
+                <div
+                  className="form__field col-sm-6 col-12 col"
+                >
+                  <ForwardRef(Field)
+                    name="firstName"
+                  >
+                    <ForwardRef(TextInput)
+                      className="bx--text-input--lg"
+                      disabled={false}
+                      helperText=""
+                      id="firstName"
+                      inline={false}
+                      invalid={false}
+                      invalidText="Input First Name."
+                      labelText=""
+                      light={false}
+                      name="firstName"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      placeholder="First Name"
+                      required={true}
+                      type="text"
+                      value="Vit"
+                      warn={false}
+                      warnText=""
+                    >
+                      <div
+                        className="bx--form-item bx--text-input-wrapper"
+                      >
+                        <div
+                          className="bx--text-input__field-outer-wrapper"
+                        >
+                          <div
+                            className="bx--text-input__field-wrapper"
+                            data-invalid={null}
+                          >
+                            <input
+                              className="bx--text-input bx--text-input--lg"
+                              disabled={false}
+                              id="firstName"
+                              name="firstName"
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              onClick={[Function]}
+                              onFocus={[Function]}
+                              placeholder="First Name"
+                              required={true}
+                              title="First Name"
+                              type="text"
+                              value="Vit"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </ForwardRef(TextInput)>
+                  </ForwardRef(Field)>
+                </div>
+              </Col>
+              <Col
+                className="form__field col-sm-6 col-12"
+                tag="div"
+                widths={
+                  Array [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                  ]
+                }
+              >
+                <div
+                  className="form__field col-sm-6 col-12 col"
+                >
+                  <ForwardRef(Field)
+                    name="lastName"
+                  >
+                    <ForwardRef(TextInput)
+                      className="bx--text-input--lg"
+                      disabled={false}
+                      helperText=""
+                      id="test2"
+                      inline={false}
+                      invalid={false}
+                      invalidText="Input Last Name."
+                      labelText=""
+                      light={false}
+                      name="lastName"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      placeholder="Last Name"
+                      required={true}
+                      type="text"
+                      value="vab"
+                      warn={false}
+                      warnText=""
+                    >
+                      <div
+                        className="bx--form-item bx--text-input-wrapper"
+                      >
+                        <div
+                          className="bx--text-input__field-outer-wrapper"
+                        >
+                          <div
+                            className="bx--text-input__field-wrapper"
+                            data-invalid={null}
+                          >
+                            <input
+                              className="bx--text-input bx--text-input--lg"
+                              disabled={false}
+                              id="test2"
+                              name="lastName"
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              onClick={[Function]}
+                              onFocus={[Function]}
+                              placeholder="Last Name"
+                              required={true}
+                              title="Last Name"
+                              type="text"
+                              value="vab"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </ForwardRef(TextInput)>
+                  </ForwardRef(Field)>
+                </div>
+              </Col>
+            </div>
+          </Row>
+          <Row
+            tag="div"
+            widths={
+              Array [
+                "xs",
+                "sm",
+                "md",
+                "lg",
+                "xl",
+              ]
+            }
+          >
+            <div
+              className="row"
+            >
+              <Col
+                tag="div"
+                widths={
+                  Array [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                  ]
+                }
+              >
+                <div
+                  className="col"
+                >
+                  <ForwardRef(Field)
+                    name="gender"
+                  >
+                    <div
+                      className="form__field"
+                    >
+                      <h4
+                        htmlFor="male"
+                      >
+                        Gender
+                      </h4>
+                      <RadioButtonGroup
+                        defaultSelected="male"
+                        invalidText="This is an invalid error message."
+                        labelPosition="right"
+                        labelText="Last Name"
+                        legend="Group Legend"
+                        name="radio-button-group"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        orientation="horizontal"
+                        value="male"
+                        valueSelected="male"
+                      >
+                        <div
+                          className="bx--form-item"
+                        >
+                          <fieldset
+                            className="bx--radio-button-group bx--radio-button-group--label-right"
+                          >
+                            <ForwardRef(RadioButton)
+                              checked={true}
+                              id="male"
+                              key="male/.0"
+                              labelText="male"
+                              name="radio-button-group"
+                              onChange={[Function]}
+                              value="male"
+                            >
+                              <RadioButton
+                                checked={true}
+                                id="male"
+                                innerRef={null}
+                                labelPosition="right"
+                                labelText="male"
+                                name="radio-button-group"
+                                onChange={[Function]}
+                                value="male"
+                              >
+                                <div
+                                  className="bx--radio-button-wrapper"
+                                >
+                                  <input
+                                    checked={true}
+                                    className="bx--radio-button"
+                                    id="male"
+                                    name="radio-button-group"
+                                    onChange={[Function]}
+                                    type="radio"
+                                    value="male"
+                                  />
+                                  <label
+                                    className="bx--radio-button__label"
+                                    htmlFor="male"
+                                  >
+                                    <span
+                                      className="bx--radio-button__appearance"
+                                    />
+                                    <span
+                                      className=""
+                                    >
+                                      male
+                                    </span>
+                                  </label>
+                                </div>
+                              </RadioButton>
+                            </ForwardRef(RadioButton)>
+                            <ForwardRef(RadioButton)
+                              checked={false}
+                              id="female"
+                              key="female/.1"
+                              labelText="female"
+                              name="radio-button-group"
+                              onChange={[Function]}
+                              value="female"
+                            >
+                              <RadioButton
+                                checked={false}
+                                id="female"
+                                innerRef={null}
+                                labelPosition="right"
+                                labelText="female"
+                                name="radio-button-group"
+                                onChange={[Function]}
+                                value="female"
+                              >
+                                <div
+                                  className="bx--radio-button-wrapper"
+                                >
+                                  <input
+                                    checked={false}
+                                    className="bx--radio-button"
+                                    id="female"
+                                    name="radio-button-group"
+                                    onChange={[Function]}
+                                    type="radio"
+                                    value="female"
+                                  />
+                                  <label
+                                    className="bx--radio-button__label"
+                                    htmlFor="female"
+                                  >
+                                    <span
+                                      className="bx--radio-button__appearance"
+                                    />
+                                    <span
+                                      className=""
+                                    >
+                                      female
+                                    </span>
+                                  </label>
+                                </div>
+                              </RadioButton>
+                            </ForwardRef(RadioButton)>
+                            <ForwardRef(RadioButton)
+                              checked={false}
+                              id="another"
+                              key="another/.2"
+                              labelText="another"
+                              name="radio-button-group"
+                              onChange={[Function]}
+                              required={true}
+                              value="another"
+                            >
+                              <RadioButton
+                                checked={false}
+                                id="another"
+                                innerRef={null}
+                                labelPosition="right"
+                                labelText="another"
+                                name="radio-button-group"
+                                onChange={[Function]}
+                                required={true}
+                                value="another"
+                              >
+                                <div
+                                  className="bx--radio-button-wrapper"
+                                >
+                                  <input
+                                    checked={false}
+                                    className="bx--radio-button"
+                                    id="another"
+                                    name="radio-button-group"
+                                    onChange={[Function]}
+                                    required={true}
+                                    type="radio"
+                                    value="another"
+                                  />
+                                  <label
+                                    className="bx--radio-button__label"
+                                    htmlFor="another"
+                                  >
+                                    <span
+                                      className="bx--radio-button__appearance"
+                                    />
+                                    <span
+                                      className=""
+                                    >
+                                      another
+                                    </span>
+                                  </label>
+                                </div>
+                              </RadioButton>
+                            </ForwardRef(RadioButton)>
+                          </fieldset>
+                        </div>
+                      </RadioButtonGroup>
+                    </div>
+                  </ForwardRef(Field)>
+                </div>
+              </Col>
+            </div>
+          </Row>
+          <Row
+            className="justify-content-center"
+            tag="div"
+            widths={
+              Array [
+                "xs",
+                "sm",
+                "md",
+                "lg",
+                "xl",
+              ]
+            }
+          >
+            <div
+              className="justify-content-center row"
+            >
+              <Col
+                className="d-flex form__field"
+                tag="div"
+                widths={
+                  Array [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                  ]
+                }
+              >
+                <div
+                  className="d-flex form__field col"
+                >
+                  <Button
+                    className="form__submit-btn false"
+                    dangerDescription="danger"
+                    disabled={false}
+                    isExpressive={false}
+                    kind="tertiary"
+                    size="default"
+                    tabIndex={0}
+                    tooltipAlignment="center"
+                    tooltipPosition="top"
+                    type="submit"
+                  >
+                    <button
+                      aria-describedby={null}
+                      aria-pressed={null}
+                      className="form__submit-btn false bx--btn bx--btn--tertiary"
+                      disabled={false}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      tabIndex={0}
+                      type="submit"
+                    >
+                      Submit
+                    </button>
+                  </Button>
+                </div>
+              </Col>
+              <Col
+                className="d-flex form__field"
+                tag="div"
+                widths={
+                  Array [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                  ]
+                }
+              >
+                <div
+                  className="d-flex form__field col"
+                >
+                  <Button
+                    className="form__reset-btn button--disabled bx--btn--danger--tertiary"
+                    dangerDescription="danger"
+                    disabled={true}
+                    isExpressive={false}
+                    kind="danger--tertiary"
+                    onClick={[Function]}
+                    size="default"
+                    tabIndex={0}
+                    tooltipAlignment="center"
+                    tooltipPosition="top"
+                    type="button"
+                  >
+                    <button
+                      aria-describedby="danger-description-4"
+                      aria-pressed={null}
+                      className="form__reset-btn button--disabled bx--btn--danger--tertiary bx--btn bx--btn--danger--tertiary bx--btn--disabled"
+                      disabled={true}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onFocus={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <span
+                        className="bx--visually-hidden"
+                        id="danger-description-4"
+                      >
+                        danger
+                      </span>
+                      Reset
+                    </button>
+                  </Button>
+                </div>
+              </Col>
+            </div>
+          </Row>
+        </form>
+      </ReactFinalForm>
+    </div>
+  </Container>
+</FormRequest>
+`;

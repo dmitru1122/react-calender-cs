@@ -1,0 +1,17 @@
+@import 'carbon-components/css/carbon-components.min.css';
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+$ui-yellow: #bea67c;
+$ui-white: #ffffff;
+$ui-black: #000000;
+$ui-grey: #888887;
+
+// // basic margin and padding, simple way to change it in all app
+// basic size for many margin, padding, width. Simple way to change evrithing in a mobile version
+//10 px if 1rem = 16px -default value
+$basic-margin: 0.625rem; // 10px if 1rem = 16px
+$breakpoint-xl: 1200px;
+$breakpoint-lg: 992px; //lg
+$breakpoint-md: 768px; //md
+$breakpoint-sm: 576px; //sm
+$breakpoint-xs: 360px;

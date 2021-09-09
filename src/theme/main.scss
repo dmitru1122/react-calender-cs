@@ -1,0 +1,32 @@
+@import './variables.scss';
+
+@font-face {
+  font-family: 'Poxima Nova';
+  src: url(./proxima-nova/ProximaNova-Regular.woff);
+}
+html,
+body {
+  height: 100%;
+  font-family: 'Poxima Nova';
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  overflow: hidden;
+}
+
+* {
+  font-family: 'Poxima Nova';
+  &:focus {
+    outline: -webkit-focus-ring-color auto 0px;
+  }
+}

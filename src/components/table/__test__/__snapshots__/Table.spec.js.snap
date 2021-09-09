@@ -1,0 +1,917 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table  loading should render Table 1`] = `
+<TableRequests
+  headerData={
+    Array [
+      Object {
+        "header": "Purpose",
+        "key": "purpose",
+      },
+      Object {
+        "header": "First Name",
+        "key": "firstName",
+      },
+    ]
+  }
+  rowData={
+    Array [
+      Object {
+        "firstName": "Vit",
+        "gender": "male",
+        "id": "2",
+        "lastName": "vab",
+        "purpose": "Job proposition",
+      },
+    ]
+  }
+>
+  <div
+    className="table"
+  >
+    <DataTable
+      filterRows={[Function]}
+      headers={
+        Array [
+          Object {
+            "header": "Purpose",
+            "key": "purpose",
+          },
+          Object {
+            "header": "First Name",
+            "key": "firstName",
+          },
+        ]
+      }
+      isSortable={true}
+      locale="en"
+      overflowMenuOnHover={true}
+      rows={
+        Array [
+          Object {
+            "firstName": "Vit",
+            "gender": "male",
+            "id": "2",
+            "lastName": "vab",
+            "purpose": "Job proposition",
+          },
+        ]
+      }
+      size="normal"
+      sortRow={[Function]}
+      translateWithId={[Function]}
+    >
+      <TableContainer
+        title="List of requests"
+      >
+        <div
+          className="bx--data-table-container"
+        >
+          <div
+            className="bx--data-table-header"
+          >
+            <h4
+              className="bx--data-table-header__title"
+            >
+              List of requests
+            </h4>
+            <p
+              className="bx--data-table-header__description"
+            />
+          </div>
+          <TableToolbar
+            aria-label="data table toolbar"
+          >
+            <section
+              aria-label="data table toolbar"
+              className="bx--table-toolbar"
+            >
+              <TableToolbarContent>
+                <div
+                  className="bx--toolbar-content"
+                >
+                  <TableToolbarSearch
+                    onChange={[Function]}
+                    persistent={false}
+                    tabIndex={0}
+                    translateWithId={[Function]}
+                  >
+                    <Search
+                      className="bx--toolbar-search-container-expandable"
+                      closeButtonLabelText="Clear search input"
+                      id="1"
+                      labelText="Filter table"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      placeholder="Filter table"
+                      tabIndex={0}
+                      type="text"
+                      value=""
+                    >
+                      <div
+                        aria-labelledby="1-search"
+                        className="bx--search bx--search--xl bx--toolbar-search-container-expandable"
+                        role="search"
+                      >
+                        <div
+                          className="bx--search-magnifier"
+                        >
+                          <ForwardRef(Search16)
+                            className="bx--search-magnifier-icon"
+                          >
+                            <Icon
+                              className="bx--search-magnifier-icon"
+                              fill="currentColor"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <svg
+                                aria-hidden={true}
+                                className="bx--search-magnifier-icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                                />
+                              </svg>
+                            </Icon>
+                          </ForwardRef(Search16)>
+                        </div>
+                        <label
+                          className="bx--label"
+                          htmlFor="1"
+                          id="1-search"
+                        >
+                          Filter table
+                        </label>
+                        <input
+                          autoComplete="off"
+                          className="bx--search-input"
+                          id="1"
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          placeholder="Filter table"
+                          role="searchbox"
+                          tabIndex={0}
+                          type="text"
+                          value=""
+                        />
+                        <button
+                          aria-label="Clear search input"
+                          className="bx--search-close bx--search-close--hidden"
+                          onClick={[Function]}
+                          type="button"
+                        >
+                          <ForwardRef(Close16)>
+                            <Icon
+                              fill="currentColor"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 32 32"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <svg
+                                aria-hidden={true}
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 32 32"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                                />
+                              </svg>
+                            </Icon>
+                          </ForwardRef(Close16)>
+                        </button>
+                      </div>
+                    </Search>
+                  </TableToolbarSearch>
+                  <Confirm
+                    action="Delete"
+                    buttonLabel="Add request"
+                    closeAction={[Function]}
+                    continueAction={null}
+                    description="hi"
+                    id=""
+                    isShowModal={false}
+                    title=""
+                    type="add"
+                  >
+                    <Buttons
+                      action={[Function]}
+                      buttonLabel="Add request"
+                      type="add"
+                    >
+                      <Button
+                        dangerDescription="danger"
+                        disabled={false}
+                        hasIconOnly={true}
+                        iconDescription="Add new"
+                        isExpressive={false}
+                        kind="primary"
+                        onClick={[Function]}
+                        renderIcon={
+                          Object {
+                            "$$typeof": Symbol(react.forward_ref),
+                            "render": [Function],
+                          }
+                        }
+                        size="default"
+                        tabIndex={0}
+                        tooltipAlignment="center"
+                        tooltipPosition="bottom"
+                        type="button"
+                      >
+                        <button
+                          aria-describedby={null}
+                          aria-pressed={null}
+                          className="bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
+                          disabled={false}
+                          onBlur={[Function]}
+                          onClick={[Function]}
+                          onFocus={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          tabIndex={0}
+                          type="button"
+                        >
+                          <div
+                            className="bx--assistive-text"
+                            onMouseEnter={[Function]}
+                          >
+                            Add new
+                          </div>
+                          Add request
+                          <ForwardRef(Add32)
+                            aria-hidden="true"
+                            aria-label="Add new"
+                            className="bx--btn__icon"
+                          >
+                            <Icon
+                              aria-hidden="true"
+                              aria-label="Add new"
+                              className="bx--btn__icon"
+                              fill="currentColor"
+                              height={32}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 32 32"
+                              width={32}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                aria-label="Add new"
+                                className="bx--btn__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={32}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={32}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                                />
+                              </svg>
+                            </Icon>
+                          </ForwardRef(Add32)>
+                        </button>
+                      </Button>
+                    </Buttons>
+                    <Modal
+                      autoFocus={true}
+                      backdrop={true}
+                      backdropTransition={
+                        Object {
+                          "mountOnEnter": true,
+                          "timeout": 150,
+                        }
+                      }
+                      centered={false}
+                      container="body"
+                      data-test="modal"
+                      fade={true}
+                      isOpen={false}
+                      keyboard={true}
+                      modalTransition={
+                        Object {
+                          "timeout": 300,
+                        }
+                      }
+                      onClosed={[Function]}
+                      onOpened={[Function]}
+                      returnFocusAfterClose={true}
+                      role="dialog"
+                      scrollable={false}
+                      toggle={[Function]}
+                      trapFocus={false}
+                      unmountOnClose={true}
+                      zIndex={1050}
+                    />
+                  </Confirm>
+                </div>
+              </TableToolbarContent>
+            </section>
+          </TableToolbar>
+          <Table
+            isSortable={true}
+            overflowMenuOnHover={true}
+            size="normal"
+          >
+            <div
+              className="bx--data-table-content"
+            >
+              <table
+                className="bx--data-table bx--data-table--normal bx--data-table--sort bx--data-table--no-border"
+              >
+                <TableHead>
+                  <thead>
+                    <TableRow>
+                      <tr>
+                        <TableHeader
+                          isSortHeader={false}
+                          isSortable={true}
+                          key="purpose"
+                          onClick={[Function]}
+                          scope="col"
+                          sortDirection="NONE"
+                          translateWithId={[Function]}
+                        >
+                          <th
+                            aria-sort="none"
+                            scope="col"
+                          >
+                            <div
+                              id="table-sort-2"
+                              style={
+                                Object {
+                                  "display": "none",
+                                }
+                              }
+                            >
+                              Click to sort rows by Purpose header in ascending order
+                            </div>
+                            <button
+                              aria-describedby="table-sort-2"
+                              className="bx--table-sort"
+                              onClick={[Function]}
+                              type="button"
+                            >
+                              <span
+                                className="bx--table-sort__flex"
+                              >
+                                <div
+                                  className="bx--table-header-label"
+                                >
+                                  Purpose
+                                </div>
+                                <ForwardRef(ArrowUp20)
+                                  className="bx--table-sort__icon"
+                                >
+                                  <Icon
+                                    className="bx--table-sort__icon"
+                                    fill="currentColor"
+                                    height={20}
+                                    preserveAspectRatio="xMidYMid meet"
+                                    viewBox="0 0 32 32"
+                                    width={20}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <svg
+                                      aria-hidden={true}
+                                      className="bx--table-sort__icon"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height={20}
+                                      preserveAspectRatio="xMidYMid meet"
+                                      viewBox="0 0 32 32"
+                                      width={20}
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
+                                      />
+                                    </svg>
+                                  </Icon>
+                                </ForwardRef(ArrowUp20)>
+                                <ForwardRef(ArrowsVertical20)
+                                  className="bx--table-sort__icon-unsorted"
+                                >
+                                  <Icon
+                                    className="bx--table-sort__icon-unsorted"
+                                    fill="currentColor"
+                                    height={20}
+                                    preserveAspectRatio="xMidYMid meet"
+                                    viewBox="0 0 32 32"
+                                    width={20}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <svg
+                                      aria-hidden={true}
+                                      className="bx--table-sort__icon-unsorted"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height={20}
+                                      preserveAspectRatio="xMidYMid meet"
+                                      viewBox="0 0 32 32"
+                                      width={20}
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
+                                      />
+                                    </svg>
+                                  </Icon>
+                                </ForwardRef(ArrowsVertical20)>
+                              </span>
+                            </button>
+                          </th>
+                        </TableHeader>
+                        <TableHeader
+                          isSortHeader={false}
+                          isSortable={true}
+                          key="firstName"
+                          onClick={[Function]}
+                          scope="col"
+                          sortDirection="NONE"
+                          translateWithId={[Function]}
+                        >
+                          <th
+                            aria-sort="none"
+                            scope="col"
+                          >
+                            <div
+                              id="table-sort-3"
+                              style={
+                                Object {
+                                  "display": "none",
+                                }
+                              }
+                            >
+                              Click to sort rows by First Name header in ascending order
+                            </div>
+                            <button
+                              aria-describedby="table-sort-3"
+                              className="bx--table-sort"
+                              onClick={[Function]}
+                              type="button"
+                            >
+                              <span
+                                className="bx--table-sort__flex"
+                              >
+                                <div
+                                  className="bx--table-header-label"
+                                >
+                                  First Name
+                                </div>
+                                <ForwardRef(ArrowUp20)
+                                  className="bx--table-sort__icon"
+                                >
+                                  <Icon
+                                    className="bx--table-sort__icon"
+                                    fill="currentColor"
+                                    height={20}
+                                    preserveAspectRatio="xMidYMid meet"
+                                    viewBox="0 0 32 32"
+                                    width={20}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <svg
+                                      aria-hidden={true}
+                                      className="bx--table-sort__icon"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height={20}
+                                      preserveAspectRatio="xMidYMid meet"
+                                      viewBox="0 0 32 32"
+                                      width={20}
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
+                                      />
+                                    </svg>
+                                  </Icon>
+                                </ForwardRef(ArrowUp20)>
+                                <ForwardRef(ArrowsVertical20)
+                                  className="bx--table-sort__icon-unsorted"
+                                >
+                                  <Icon
+                                    className="bx--table-sort__icon-unsorted"
+                                    fill="currentColor"
+                                    height={20}
+                                    preserveAspectRatio="xMidYMid meet"
+                                    viewBox="0 0 32 32"
+                                    width={20}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <svg
+                                      aria-hidden={true}
+                                      className="bx--table-sort__icon-unsorted"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height={20}
+                                      preserveAspectRatio="xMidYMid meet"
+                                      viewBox="0 0 32 32"
+                                      width={20}
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
+                                      />
+                                    </svg>
+                                  </Icon>
+                                </ForwardRef(ArrowsVertical20)>
+                              </span>
+                            </button>
+                          </th>
+                        </TableHeader>
+                        <TableHeader
+                          className="bx--table-sort-v2__ico"
+                          isSortable={false}
+                          scope="col"
+                          translateWithId={[Function]}
+                        >
+                          <th
+                            className="bx--table-sort-v2__ico"
+                            scope="col"
+                          >
+                            <div
+                              className="bx--table-header-label"
+                            >
+                              Edit
+                            </div>
+                          </th>
+                        </TableHeader>
+                      </tr>
+                    </TableRow>
+                  </thead>
+                </TableHead>
+                <TableBody
+                  aria-live="polite"
+                >
+                  <tbody
+                    aria-live="polite"
+                  >
+                    <TableRow
+                      className="table__row"
+                      key="2"
+                    >
+                      <tr
+                        className="table__row"
+                      >
+                        <TableCell
+                          className="table__row__cell"
+                          key="2:purpose"
+                          onClick={[Function]}
+                        >
+                          <td
+                            className="table__row__cell"
+                            onClick={[Function]}
+                          >
+                            Job proposition
+                          </td>
+                        </TableCell>
+                        <TableCell
+                          className="table__row__cell"
+                          key="2:firstName"
+                          onClick={[Function]}
+                        >
+                          <td
+                            className="table__row__cell"
+                            onClick={[Function]}
+                          >
+                            Vit
+                          </td>
+                        </TableCell>
+                        <TableCell
+                          className="table__row__cell--short"
+                        >
+                          <td
+                            className="table__row__cell--short"
+                          >
+                            <Confirm
+                              action="Delete"
+                              buttonLabel={null}
+                              closeAction={[Function]}
+                              continueAction={[Function]}
+                              description="Are you sure you want to go on?"
+                              id=""
+                              isShowModal={false}
+                              title="Delete"
+                              type="delete"
+                            >
+                              <Buttons
+                                action={[Function]}
+                                buttonLabel={null}
+                                type="delete"
+                              >
+                                <Button
+                                  dangerDescription="danger"
+                                  disabled={false}
+                                  hasIconOnly={true}
+                                  iconDescription="Delete row"
+                                  isExpressive={false}
+                                  kind="ghost"
+                                  onClick={[Function]}
+                                  renderIcon={
+                                    Object {
+                                      "$$typeof": Symbol(react.forward_ref),
+                                      "render": [Function],
+                                    }
+                                  }
+                                  size="default"
+                                  tabIndex={0}
+                                  tooltipAlignment="center"
+                                  tooltipPosition="bottom"
+                                  type="button"
+                                >
+                                  <button
+                                    aria-describedby={null}
+                                    className="bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
+                                    disabled={false}
+                                    onBlur={[Function]}
+                                    onClick={[Function]}
+                                    onFocus={[Function]}
+                                    onMouseEnter={[Function]}
+                                    onMouseLeave={[Function]}
+                                    tabIndex={0}
+                                    type="button"
+                                  >
+                                    <div
+                                      className="bx--assistive-text"
+                                      onMouseEnter={[Function]}
+                                    >
+                                      Delete row
+                                    </div>
+                                    <ForwardRef(TrashCan32)
+                                      aria-hidden="true"
+                                      aria-label="Delete row"
+                                      className="bx--btn__icon"
+                                    >
+                                      <Icon
+                                        aria-hidden="true"
+                                        aria-label="Delete row"
+                                        className="bx--btn__icon"
+                                        fill="currentColor"
+                                        height={32}
+                                        preserveAspectRatio="xMidYMid meet"
+                                        viewBox="0 0 32 32"
+                                        width={32}
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <svg
+                                          aria-hidden="true"
+                                          aria-label="Delete row"
+                                          className="bx--btn__icon"
+                                          fill="currentColor"
+                                          focusable="false"
+                                          height={32}
+                                          preserveAspectRatio="xMidYMid meet"
+                                          role="img"
+                                          viewBox="0 0 32 32"
+                                          width={32}
+                                          xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                          <path
+                                            d="M12 12H14V24H12zM18 12H20V24H18z"
+                                          />
+                                          <path
+                                            d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                                          />
+                                        </svg>
+                                      </Icon>
+                                    </ForwardRef(TrashCan32)>
+                                  </button>
+                                </Button>
+                              </Buttons>
+                              <Modal
+                                autoFocus={true}
+                                backdrop={true}
+                                backdropTransition={
+                                  Object {
+                                    "mountOnEnter": true,
+                                    "timeout": 150,
+                                  }
+                                }
+                                centered={false}
+                                container="body"
+                                data-test="modal"
+                                fade={true}
+                                isOpen={false}
+                                keyboard={true}
+                                modalTransition={
+                                  Object {
+                                    "timeout": 300,
+                                  }
+                                }
+                                onClosed={[Function]}
+                                onOpened={[Function]}
+                                returnFocusAfterClose={true}
+                                role="dialog"
+                                scrollable={false}
+                                toggle={[Function]}
+                                trapFocus={false}
+                                unmountOnClose={true}
+                                zIndex={1050}
+                              />
+                            </Confirm>
+                            <Confirm
+                              action="Delete"
+                              buttonLabel={null}
+                              closeAction={[Function]}
+                              continueAction={null}
+                              description={null}
+                              id="2"
+                              isShowModal={false}
+                              title="Edit row"
+                              type="edit"
+                            >
+                              <Buttons
+                                action={[Function]}
+                                buttonLabel={null}
+                                type="edit"
+                              >
+                                <Button
+                                  dangerDescription="danger"
+                                  disabled={false}
+                                  hasIconOnly={true}
+                                  iconDescription="Edit row"
+                                  isExpressive={false}
+                                  kind="ghost"
+                                  onClick={[Function]}
+                                  renderIcon={
+                                    Object {
+                                      "$$typeof": Symbol(react.forward_ref),
+                                      "render": [Function],
+                                    }
+                                  }
+                                  size="default"
+                                  tabIndex={0}
+                                  tooltipAlignment="center"
+                                  tooltipPosition="bottom"
+                                  type="button"
+                                >
+                                  <button
+                                    aria-describedby={null}
+                                    className="bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
+                                    disabled={false}
+                                    onBlur={[Function]}
+                                    onClick={[Function]}
+                                    onFocus={[Function]}
+                                    onMouseEnter={[Function]}
+                                    onMouseLeave={[Function]}
+                                    tabIndex={0}
+                                    type="button"
+                                  >
+                                    <div
+                                      className="bx--assistive-text"
+                                      onMouseEnter={[Function]}
+                                    >
+                                      Edit row
+                                    </div>
+                                    <ForwardRef(Edit32)
+                                      aria-hidden="true"
+                                      aria-label="Edit row"
+                                      className="bx--btn__icon"
+                                    >
+                                      <Icon
+                                        aria-hidden="true"
+                                        aria-label="Edit row"
+                                        className="bx--btn__icon"
+                                        fill="currentColor"
+                                        height={32}
+                                        preserveAspectRatio="xMidYMid meet"
+                                        viewBox="0 0 32 32"
+                                        width={32}
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <svg
+                                          aria-hidden="true"
+                                          aria-label="Edit row"
+                                          className="bx--btn__icon"
+                                          fill="currentColor"
+                                          focusable="false"
+                                          height={32}
+                                          preserveAspectRatio="xMidYMid meet"
+                                          role="img"
+                                          viewBox="0 0 32 32"
+                                          width={32}
+                                          xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                          <path
+                                            d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                                          />
+                                        </svg>
+                                      </Icon>
+                                    </ForwardRef(Edit32)>
+                                  </button>
+                                </Button>
+                              </Buttons>
+                              <Modal
+                                autoFocus={true}
+                                backdrop={true}
+                                backdropTransition={
+                                  Object {
+                                    "mountOnEnter": true,
+                                    "timeout": 150,
+                                  }
+                                }
+                                centered={false}
+                                container="body"
+                                data-test="modal"
+                                fade={true}
+                                isOpen={false}
+                                keyboard={true}
+                                modalTransition={
+                                  Object {
+                                    "timeout": 300,
+                                  }
+                                }
+                                onClosed={[Function]}
+                                onOpened={[Function]}
+                                returnFocusAfterClose={true}
+                                role="dialog"
+                                scrollable={false}
+                                toggle={[Function]}
+                                trapFocus={false}
+                                unmountOnClose={true}
+                                zIndex={1050}
+                              />
+                            </Confirm>
+                          </td>
+                        </TableCell>
+                      </tr>
+                    </TableRow>
+                  </tbody>
+                </TableBody>
+              </table>
+            </div>
+          </Table>
+        </div>
+      </TableContainer>
+    </DataTable>
+    <Confirm
+      action="Continue"
+      buttonLabel={null}
+      closeAction={[Function]}
+      continueAction={null}
+      description="Request was deleted"
+      id=""
+      isShowModal={false}
+      title="Warning"
+      type="notice"
+    >
+      <Modal
+        autoFocus={true}
+        backdrop={true}
+        backdropTransition={
+          Object {
+            "mountOnEnter": true,
+            "timeout": 150,
+          }
+        }
+        centered={false}
+        container="body"
+        data-test="modal"
+        fade={true}
+        isOpen={false}
+        keyboard={true}
+        modalTransition={
+          Object {
+            "timeout": 300,
+          }
+        }
+        onClosed={[Function]}
+        onOpened={[Function]}
+        returnFocusAfterClose={true}
+        role="dialog"
+        scrollable={false}
+        toggle={[Function]}
+        trapFocus={false}
+        unmountOnClose={true}
+        zIndex={1050}
+      />
+    </Confirm>
+  </div>
+</TableRequests>
+`;

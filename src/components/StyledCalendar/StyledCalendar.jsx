@@ -1,7 +1,10 @@
-import React, { useState, Component } from 'react'
+/* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */
+
+import React, { useState } from 'react'
 import moment from 'moment'
 
-import Timeline from 'react-calendar-timeline'
+import Timeline, { TimelineHeaders, SidebarHeader, DateHeader, CustomHeader } from 'react-calendar-timeline'
+import 'react-calendar-timeline/lib/Timeline.css'
 
 const keys = {
   groupIdKey: 'id',
@@ -14,13 +17,12 @@ const keys = {
   itemTimeStartKey: 'start',
   itemTimeEndKey: 'end',
   groupLabelKey: 'title'
-};
-const groupps = [
+}
+const initGroups = [
   { id: 1, title: 'group 1' },
   { id: 2, title: 'group 2' }
-];
-
-const itemms = [
+]
+const initItems = [
   {
     id: 1,
     group: 1,
@@ -42,38 +44,52 @@ const itemms = [
     start: moment('09-09-2021', 'DD-MM-YYYY'),
     end: moment('12-09-2021', 'DD-MM-YYYY')
   }
-];
+]
 
 const StyledCalendar = () => {
-  const [items, setItems] = useState(itemms);
-  const [groups] = useState(groupps);
-  const defaultTimeStart = moment().startOf('month').toDate()
-  const defaultTimeEnd = moment().startOf('month').add(1, 'month').toDate()
+  const [items, setItems] = useState(initItems)
+  const [groups] = useState(initGroups)
+  const defaultTimeStart = moment().startOf('month').toDate();
+  const defaultTimeEnd = moment().startOf('month').add(1, 'month').toDate();
 
   const handleItemMove = (itemId, dragTime, newGroupOrder) => {
-    const { id: groupId } = groups[newGroupOrder];
+    const { id: groupId } = groups[newGroupOrder]
     const newItems = items.map((item) => {
       return item.id === itemId
         ? { ...item, start: dragTime, end: dragTime + (item.end - item.start), group: groupId }
         : item
-    });
+    })
 
-    setItems(newItems);
+    setItems(newItems)
     console.log('Moved', itemId, dragTime, newGroupOrder)
-  };
+  }
 
   const handleItemResize = (itemId, time, edge) => {
     const newItems = items.map((item) => {
       return item.id === itemId
-        ? { ...item, start: dragTime, end: dragTime + (item.end - item.start), group: groupId }
+        ? { ...item, start: edge === 'left' ? time : item.start, end: edge === 'left' ? item.end : time }
         : item
-    });
-
-    setItems(newItems);
+    })
+    setItems(newItems)
     console.log('Resized', itemId, time, edge)
-  };
+  }
+
   return (
     <Timeline
+      itemRenderer={({ item, itemContext, getItemProps, getResizeProps }) => {
+        const { left: leftResizeProps, right: rightResizeProps } = getResizeProps()
+        return (
+          <div {...getItemProps(item.itemProps)}>
+            {itemContext.useResizeHandle ? <div {...leftResizeProps} /> : ''}
+
+            <div className='rct-item-content' style={{ maxHeight: `${itemContext.dimensions.height}` }}>
+              {`custom ${itemContext.title}`}
+            </div>
+
+            {itemContext.useResizeHandle ? <div {...rightResizeProps} /> : ''}
+          </div>
+        )
+      }}
       groups={groups}
       items={items}
       keys={keys}
@@ -85,94 +101,54 @@ const StyledCalendar = () => {
       canMove
       canResize='both'
       defaultTimeStart={defaultTimeStart}
+      // visibleTimeStart={defaultTimeStart}
       dragSnap={86400000}
       defaultTimeEnd={defaultTimeEnd}
+      // visibleTimeEnd={defaultTimeEnd}
       onItemMove={handleItemMove}
       timeSteps={{ day: 1, hour: 24, month: 1, year: 1 }}
       timelineUnit='day'
       isInteractingWithItem
-      onItemResize={handleItemResize}
-    />
+      onItemResize={handleItemResize}>
+      <TimelineHeaders>
+        <SidebarHeader>
+          {({ getRootProps }) => {
+            return <div {...getRootProps()}>Febuary 2021</div>
+          }}
+        </SidebarHeader>
+        <DateHeader unit='day' />
+        <CustomHeader height={50} headerData={{ someData: 'data' }} unit='day'>
+          {({ headerContext: { intervals }, getRootProps, getIntervalProps }) => {
+            return (
+              <div {...getRootProps()}>
+                {intervals.map((interval) => {
+                  const intervalStyle = {
+                    lineHeight: '30px',
+                    textAlign: 'center',
+                    border: '1px solid black',
+                    backgroundColor: 'white',
+                    color: 'black'
+                  }
+                  return (
+                    <div
+                      role='heading'
+                      aria-level='2'
+                      {...getIntervalProps({
+                        interval,
+                        style: intervalStyle
+                      })}>
+                      <div className='sticky'>{interval.startTime.format('ddd')}</div>
+                    </div>
+                  )
+                })}
+              </div>
+            )
+          }}
+        </CustomHeader>
+        {/* <DateHeader unit="asdf"/> */}
+      </TimelineHeaders>
+    </Timeline>
   )
+}
 
-};
-
-// class App extends Component {
-//   constructor(props) {
-//     super(props)
-
-//     // const { groups, items } = generateFakeData();
-//     // console.log(items);
-//     const items = itemms
-//     const groups = groupps
-//     const defaultTimeStart = moment().startOf('month').toDate()
-//     const defaultTimeEnd = moment().startOf('month').add(1, 'month').toDate()
-
-//     this.state = {
-//       groups,
-//       items,
-//       defaultTimeStart,
-//       defaultTimeEnd
-//     }
-//   }
-
-//   handleItemMove = (itemId, dragTime, newGroupOrder) => {
-//     const { items, groups } = this.state
-
-//     const group = groups[newGroupOrder]
-
-//     this.setState({
-//       items: items.map((item) =>
-//         item.id === itemId
-//           ? { ...item, start: dragTime, end: dragTime + (item.end - item.start), group: group.id }
-//           : item
-//       )
-//     })
-
-//     console.log('Moved', itemId, dragTime, newGroupOrder)
-//   }
-
-//   handleItemResize = (itemId, time, edge) => {
-//     const { items } = this.state
-
-//     this.setState({
-//       items: items.map((item) =>
-//         item.id === itemId
-//           ? { ...item, start: edge === 'left' ? time : item.start, end: edge === 'left' ? item.end : time }
-//           : item
-//       )
-//     })
-
-//     console.log('Resized', itemId, time, edge)
-//   }
-
-//   render() {
-//     const { groups, items, defaultTimeStart, defaultTimeEnd } = this.state
-//     // console.log(generateFakeData);
-
-//     return (
-//       <Timeline
-//         groups={groups}
-//         items={items}
-//         keys={keys}
-//         fullUpdate='fal'
-//         canChangeGroup
-//         itemTouchSendsClick
-//         stackItems
-//         itemHeightRatio={0.75}
-//         canMove
-//         canResize='both'
-//         defaultTimeStart={defaultTimeStart}
-//         dragSnap={86400000}
-//         defaultTimeEnd={defaultTimeEnd}
-//         onItemMove={this.handleItemMove}
-//         timeSteps={{ day: 1, hour: 24, month: 1, year: 1 }}
-//         timelineUnit='day'
-//         isInteractingWithItem
-//         onItemResize={this.handleItemResize}
-//       />
-//     )
-//   }
-// }
-
-export default StyledCalendar;
+export default StyledCalendar

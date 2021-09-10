@@ -136,7 +136,7 @@ class App extends Component {
         groups={groups}
         items={items}
         keys={keys}
-        fullUpdate='false'
+        fullUpdate
         onCanvasClick={this.handleClick}
         canChangeGroup
         itemTouchSendsClick

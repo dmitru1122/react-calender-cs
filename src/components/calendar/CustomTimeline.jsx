@@ -29,33 +29,46 @@ const itemms = [
     id: 1,
     group: 1,
     title: 'item 1',
-    start: moment('01-09-2021', 'DD-MM-YYYY'),
-    end: moment('10-09-2021', 'DD-MM-YYYY'),
+    start: moment('01-09-2021', 'DD-MM-YYYY').valueOf(),
+    end: moment('10-09-2021', 'DD-MM-YYYY').valueOf(),
   },
   {
     id: 2,
     group: 2,
     title: 'item 2',
-    start: moment('08-09-2021', 'DD-MM-YYYY'),
-    end: moment('09-09-2021', 'DD-MM-YYYY'),
+    start: moment('08-09-2021', 'DD-MM-YYYY').valueOf(),
+    end: moment('09-09-2021', 'DD-MM-YYYY').valueOf(),
   },
   {
     id: 3,
     group: 1,
     title: 'item 3',
-    start: moment('09-09-2021', 'DD-MM-YYYY'),
-    end: moment('12-09-2021', 'DD-MM-YYYY'),
+    start: moment('09-09-2021', 'DD-MM-YYYY').valueOf(),
+    end: moment('12-09-2021', 'DD-MM-YYYY').valueOf(),
   },
 ];
 
+// In future i will put two next function to another file
+function createLoacalStorage() {
+  const checkItem = localStorage.getItem('itemms') ? null : localStorage.setItem('itemms', JSON.stringify(itemms));
+  const checkGroup = localStorage.getItem('groupps') ? null : localStorage.setItem('groupps', JSON.stringify(groupps));
+
+  return { checkItem, checkGroup };
+}
+
+createLoacalStorage();
+
+function getStorageValues() {
+  const items = localStorage.getItem('itemms') ? JSON.parse(localStorage.getItem('itemms')) : itemms;
+  const groups = localStorage.getItem('groupps') ? JSON.parse(localStorage.getItem('groupps')) : groupps;
+  return { items, groups };
+}
+
+getStorageValues();
 class App extends Component {
   constructor(props) {
     super(props);
-
-    // const { groups, items } = generateFakeData();
-    // console.log(items);
-    const items = itemms;
-    const groups = groupps;
+    const { items, groups } = getStorageValues();
     const defaultTimeStart = moment().startOf('month').toDate();
     const defaultTimeEnd = moment().startOf('month').add(1, 'month').toDate();
 
@@ -83,6 +96,23 @@ class App extends Component {
     console.log('Moved', itemId, dragTime, newGroupOrder);
   };
 
+  handleClick = (itemId, time) => {
+    const { items } = this.state;
+    const intervalArr = [...items];
+    const midnightTime = time - 10800000;
+
+    intervalArr.push({
+      id: items.length + 1,
+      group: itemId,
+      title: 'new item',
+      start: midnightTime,
+      end: midnightTime + 86400000,
+    });
+    this.setState({
+      items: intervalArr,
+    });
+  };
+
   handleItemResize = (itemId, time, edge) => {
     const { items } = this.state;
 
@@ -106,7 +136,8 @@ class App extends Component {
         groups={groups}
         items={items}
         keys={keys}
-        fullUpdate='fal'
+        fullUpdate='false'
+        onCanvasClick={this.handleClick}
         canChangeGroup
         itemTouchSendsClick
         stackItems

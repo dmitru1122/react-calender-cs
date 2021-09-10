@@ -1,11 +1,11 @@
 import moment from 'moment';
 
-const groupps = [
+const defaultsGroup = [
   { id: 1, title: 'group 1' },
   { id: 2, title: 'group 2' },
 ];
 
-const itemms = [
+const defaultsItems = [
   {
     id: 1,
     group: 1,
@@ -30,14 +30,26 @@ const itemms = [
 ];
 
 export function createLoacalStorage() {
-  const checkItem = localStorage.getItem('itemms') ? null : localStorage.setItem('itemms', JSON.stringify(itemms));
-  const checkGroup = localStorage.getItem('groupps') ? null : localStorage.setItem('groupps', JSON.stringify(groupps));
+  const checkItem = localStorage.getItem('itemms')
+    ? null
+    : localStorage.setItem('itemms', JSON.stringify(defaultsItems));
+  const checkGroup = localStorage.getItem('groupps')
+    ? null
+    : localStorage.setItem('groupps', JSON.stringify(defaultsGroup));
 
   return { checkItem, checkGroup };
 }
 
 export function getStorageValues() {
-  const items = localStorage.getItem('itemms') ? JSON.parse(localStorage.getItem('itemms')) : itemms;
-  const groups = localStorage.getItem('groupps') ? JSON.parse(localStorage.getItem('groupps')) : groupps;
+  const items = localStorage.getItem('itemms') ? JSON.parse(localStorage.getItem('itemms')) : defaultsItems;
+  const groups = localStorage.getItem('groupps') ? JSON.parse(localStorage.getItem('groupps')) : defaultsGroup;
   return { items, groups };
 }
+
+export function refreshLocalStorage(data) {
+  localStorage.setItem('itemms', JSON.stringify(data));
+}
+
+// export function addToLocalStorage(item) {
+
+// }

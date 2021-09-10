@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 import Timeline from 'react-calendar-timeline';
-import { createLoacalStorage, getStorageValues } from './CreateLocalStorageData';
+import 'react-calendar-timeline/lib/Timeline.css';
+import { createLoacalStorage, getStorageValues, refreshLocalStorage } from './CreateLocalStorageData';
+// import Modal from '../modal/Modal';
 
 // import generateFakeData from './generate-fake-data';
 
@@ -56,29 +58,49 @@ class App extends Component {
     const { items } = this.state;
     const intervalArr = [...items];
     const midnightTime = time - 10800000;
-
-    intervalArr.push({
+    const newItem = {
       id: items.length + 1,
       group: itemId,
       title: 'new item',
       start: midnightTime,
       end: midnightTime + 86400000,
-    });
-    this.setState({
-      items: intervalArr,
-    });
+    };
+
+    intervalArr.push(newItem);
+    this.setState(
+      {
+        items: intervalArr,
+      },
+      () => refreshLocalStorage(items),
+    );
+  };
+
+  handleItemDoubleClick = (itemId) => {
+    const { items } = this.state;
+
+    this.setState(
+      {
+        items: items.map((item) => (item.id === itemId ? { ...item, title: 'Vocation' } : item)),
+      },
+      () => refreshLocalStorage(items),
+    );
+
+    console.log('Vocation', itemId);
   };
 
   handleItemResize = (itemId, time, edge) => {
     const { items } = this.state;
 
-    this.setState({
-      items: items.map((item) =>
-        item.id === itemId
-          ? { ...item, start: edge === 'left' ? time : item.start, end: edge === 'left' ? item.end : time }
-          : item,
-      ),
-    });
+    this.setState(
+      {
+        items: items.map((item) =>
+          item.id === itemId
+            ? { ...item, start: edge === 'left' ? time : item.start, end: edge === 'left' ? item.end : time }
+            : item,
+        ),
+      },
+      () => refreshLocalStorage(items),
+    );
 
     console.log('Resized', itemId, time, edge);
   };
@@ -94,6 +116,7 @@ class App extends Component {
         keys={keys}
         fullUpdate
         onCanvasClick={this.handleClick}
+        onItemDoubleClick={this.handleItemDoubleClick}
         canChangeGroup
         itemTouchSendsClick
         stackItems

@@ -1,6 +1,6 @@
 import { useGetRequestData } from '../../../cusom-hooks/GetListRequests';
 import LoadTable from '../../load-table/LoadTable';
-import Calendar from '../../calendar/index';
+import Calendar from '../../calendar/CustomTimeline';
 
 function Home() {
   const listRequests = useGetRequestData();

@@ -81,7 +81,10 @@ function TableRequests(props) {
                     ) : (
                       <>
                         {row.cells.map((cell) => (
-                          <TableCell className="table__row__cell" key={cell.id} onClick={() => openFullRequestInfo(row.id)}>
+                          <TableCell
+                            className='table__row__cell'
+                            key={cell.id}
+                            onClick={() => openFullRequestInfo(row.id)}>
                             {cell.value}
                           </TableCell>
                         ))}

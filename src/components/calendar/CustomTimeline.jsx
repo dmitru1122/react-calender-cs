@@ -3,7 +3,7 @@ import moment from 'moment';
 import Timeline from 'react-calendar-timeline';
 import 'react-calendar-timeline/lib/Timeline.css';
 import { createLoacalStorage, getStorageValues, refreshLocalStorage } from './CreateLocalStorageData';
-// import Modal from '../modal/Modal';
+import Modal from '../modal/Modal';
 
 // import generateFakeData from './generate-fake-data';
 
@@ -23,6 +23,7 @@ const keys = {
 };
 
 createLoacalStorage();
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -35,12 +36,15 @@ class App extends Component {
       items,
       defaultTimeStart,
       defaultTimeEnd,
+      isShowEditModal: false,
+      isShowAddModal: false,
+      addTime: 0,
+      activeId: 0,
     };
   }
 
   handleItemMove = (itemId, dragTime, newGroupOrder) => {
     const { items, groups } = this.state;
-
     const group = groups[newGroupOrder];
 
     this.setState({
@@ -50,42 +54,7 @@ class App extends Component {
           : item,
       ),
     });
-
-    console.log('Moved', itemId, dragTime, newGroupOrder);
-  };
-
-  handleClick = (itemId, time) => {
-    const { items } = this.state;
-    const intervalArr = [...items];
-    const midnightTime = time - 10800000;
-    const newItem = {
-      id: items.length + 1,
-      group: itemId,
-      title: 'new item',
-      start: midnightTime,
-      end: midnightTime + 86400000,
-    };
-
-    intervalArr.push(newItem);
-    this.setState(
-      {
-        items: intervalArr,
-      },
-      () => refreshLocalStorage(items),
-    );
-  };
-
-  handleItemDoubleClick = (itemId) => {
-    const { items } = this.state;
-
-    this.setState(
-      {
-        items: items.map((item) => (item.id === itemId ? { ...item, title: 'Vocation' } : item)),
-      },
-      () => refreshLocalStorage(items),
-    );
-
-    console.log('Vocation', itemId);
+    // console.log('Moved', itemId, dragTime, newGroupOrder);
   };
 
   handleItemResize = (itemId, time, edge) => {
@@ -102,36 +71,111 @@ class App extends Component {
       () => refreshLocalStorage(items),
     );
 
-    console.log('Resized', itemId, time, edge);
+    // console.log('Resized', itemId, time, edge);
+  };
+
+  handleClick = (itemId, time) => {
+    this.setState({ activeId: itemId });
+    this.setState({ addTime: time });
+    this.setState({ isShowAddModal: true });
+  };
+
+  handleAddItem = (values) => {
+    const { items, activeId, addTime } = this.state;
+    const intervalArr = [...items];
+    const midnightTime = addTime - 10800000;
+    const newItem = {
+      id: items.length + 1,
+      group: activeId,
+      title: values.purpose,
+      start: midnightTime,
+      end: midnightTime + 86400000,
+    };
+
+    intervalArr.push(newItem);
+    this.setState(
+      {
+        items: intervalArr,
+      },
+      () => refreshLocalStorage(items),
+    );
+    this.handleCloseModal();
+  };
+
+  handleItemDoubleClick = (itemId) => {
+    this.setState({
+      isShowEditModal: true,
+    });
+    this.setState({
+      activeId: itemId,
+    });
+
+    // console.log('Vocation', itemId);
+  };
+
+  handleCloseModal = () => {
+    this.setState({
+      isShowEditModal: false,
+      isShowAddModal: false,
+    });
+  };
+
+  handleSubmitModal = (values) => {
+    const { items, activeId } = this.state;
+
+    this.setState(
+      {
+        items: items.map((item) => (item.id === activeId ? { ...item, title: values.purpose } : item)),
+      },
+      () => refreshLocalStorage(items),
+    );
   };
 
   render() {
-    const { groups, items, defaultTimeStart, defaultTimeEnd } = this.state;
+    const { groups, items, defaultTimeStart, defaultTimeEnd, isShowEditModal, isShowAddModal } = this.state;
     // console.log(generateFakeData);
 
     return (
-      <Timeline
-        groups={groups}
-        items={items}
-        keys={keys}
-        fullUpdate
-        onCanvasClick={this.handleClick}
-        onItemDoubleClick={this.handleItemDoubleClick}
-        canChangeGroup
-        itemTouchSendsClick
-        stackItems
-        itemHeightRatio={0.75}
-        canMove
-        canResize='both'
-        defaultTimeStart={defaultTimeStart}
-        dragSnap={86400000}
-        defaultTimeEnd={defaultTimeEnd}
-        onItemMove={this.handleItemMove}
-        timeSteps={{ day: 1, hour: 24, month: 1, year: 1 }}
-        timelineUnit='day'
-        isInteractingWithItem
-        onItemResize={this.handleItemResize}
-      />
+      <>
+        <Timeline
+          groups={groups}
+          items={items}
+          keys={keys}
+          fullUpdate
+          onCanvasClick={this.handleClick}
+          onItemDoubleClick={this.handleItemDoubleClick}
+          canChangeGroup
+          itemTouchSendsClick
+          stackItems
+          itemHeightRatio={0.75}
+          canMove
+          canResize='both'
+          defaultTimeStart={defaultTimeStart}
+          dragSnap={86400000}
+          defaultTimeEnd={defaultTimeEnd}
+          onItemMove={this.handleItemMove}
+          timeSteps={{ day: 1, hour: 24, month: 1, year: 1 }}
+          timelineUnit='day'
+          isInteractingWithItem
+          onItemResize={this.handleItemResize}
+        />
+        <Modal
+          type='edit'
+          isShowModal={isShowEditModal}
+          action={this.handleSubmitModal}
+          closeAction={this.handleCloseModal}
+          title='Edit label'
+          description='Request was deleted'
+        />
+        <Modal
+          type='edit'
+          isShowModal={isShowAddModal}
+          action={this.handleAddItem}
+          closeAction={this.handleCloseModal}
+          title='Select label'
+          description='Request was deleted'
+        />
+      </>
     );
   }
 }

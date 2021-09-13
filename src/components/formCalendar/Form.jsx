@@ -4,21 +4,9 @@ import { Select, SelectItem, Button } from 'carbon-components-react';
 import { Container, Row, Col } from 'reactstrap';
 import './FormRequest.scss';
 import PropTypes from 'prop-types';
+import ItemList from '../item-title-type';
 
-const selectItemList = [
-  { text: 'Annual Leave - Full', value: 'Annual Leave - Full' },
-  { text: 'Annual Leave - Morning', value: 'Annual Leave - Morning' },
-  { text: 'Annual Leave - Afternoon', value: 'Annual Leave - Afternoon' },
-  { text: 'Sick Leave', value: 'Sick Leave' },
-  { text: 'Dependant Leave', value: 'Dependant Leave' },
-  { text: 'Compassionate Leave', value: 'Compassionate Leave' },
-  { text: 'Jury Duty', value: 'Jury Duty' },
-  { text: 'Public Holiday', value: 'Public Holiday' },
-  { text: 'Purchased Leave', value: 'Purchased Leave' },
-  { text: 'Unpaid Leave', value: 'Unpaid Leave' },
-  { text: 'Training', value: 'Training' },
-  { text: 'Other', value: 'Other' },
-];
+const selectItemList = [...ItemList];
 
 const FormRequest = (props) => {
   const { title, initialData, action } = props;

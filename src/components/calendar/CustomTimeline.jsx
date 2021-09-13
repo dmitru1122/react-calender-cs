@@ -4,6 +4,7 @@ import Timeline from 'react-calendar-timeline';
 import 'react-calendar-timeline/lib/Timeline.css';
 import { createLoacalStorage, getStorageValues, refreshLocalStorage } from './CreateLocalStorageData';
 import Modal from '../modal/Modal';
+import itemList from '../item-title-type';
 
 // import generateFakeData from './generate-fake-data';
 
@@ -42,6 +43,65 @@ class App extends Component {
       activeId: 0,
     };
   }
+
+  itemRenderer = ({ item, timelineContext, itemContext, getItemProps, getResizeProps }) => {
+    console.log(timelineContext);
+    console.log(item);
+    const { left: leftResizeProps, right: rightResizeProps } = getResizeProps();
+    let bgColor;
+    let color;
+    // eslint-disable-next-line no-nested-ternary
+    itemList.forEach((element) => {
+      if (element.value === item.title) {
+        color = element.color;
+        bgColor = element.backgroundColor;
+      }
+    });
+    let backgroundColor;
+    if (itemContext.selected) {
+      if (itemContext.dragging) {
+        backgroundColor = 'red';
+      }
+    } else {
+      backgroundColor = bgColor;
+    }
+
+    // eslint-disable-next-line no-nested-ternary
+    // const backgroundColor = itemContext.selected ? (itemContext.dragging ? 'red' : item.selectedBgColor) : bgColor
+    const borderColor = itemContext.resizing ? 'red' : 'black';
+    return (
+      <div
+        {...getItemProps({
+          style: {
+            backgroundColor,
+            textAlign: 'center',
+            color,
+            border: `1px solid ${borderColor}`,
+            borderRadius: 4,
+            borderLeftWidth: itemContext.selected ? 3 : 1,
+            borderRightWidth: itemContext.selected ? 3 : 1,
+          },
+          onMouseDown: () => {
+            console.log('on item click', item);
+          },
+        })}>
+        {itemContext.useResizeHandle ? <div {...leftResizeProps} /> : null}
+
+        <div
+          style={{
+            height: itemContext.dimensions.height,
+            overflow: 'hidden',
+            paddingLeft: 3,
+            textOverflow: 'ellipsis',
+            whiteSpace: 'nowrap',
+          }}>
+          {itemContext.title}
+        </div>
+
+        {itemContext.useResizeHandle ? <div {...rightResizeProps} /> : null}
+      </div>
+    );
+  };
 
   handleItemMove = (itemId, dragTime, newGroupOrder) => {
     const { items, groups } = this.state;
@@ -157,6 +217,7 @@ class App extends Component {
           timeSteps={{ day: 1, hour: 24, month: 1, year: 1 }}
           timelineUnit='day'
           isInteractingWithItem
+          itemRenderer={this.itemRenderer}
           onItemResize={this.handleItemResize}
         />
         <Modal

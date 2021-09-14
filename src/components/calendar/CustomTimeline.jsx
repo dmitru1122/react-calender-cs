@@ -59,6 +59,8 @@ class App extends Component {
     });
     let backgroundColor;
     if (itemContext.selected) {
+      backgroundColor = 'orange';
+
       if (itemContext.dragging) {
         backgroundColor = 'red';
       }
@@ -73,7 +75,7 @@ class App extends Component {
       <div
         {...getItemProps({
           style: {
-            backgroundColor,
+            background: backgroundColor,
             textAlign: 'center',
             color,
             border: `1px solid ${borderColor}`,
@@ -215,7 +217,6 @@ class App extends Component {
           defaultTimeEnd={defaultTimeEnd}
           onItemMove={this.handleItemMove}
           timeSteps={{ day: 1, hour: 24, month: 1, year: 1 }}
-          timelineUnit='day'
           isInteractingWithItem
           itemRenderer={this.itemRenderer}
           onItemResize={this.handleItemResize}

@@ -216,9 +216,11 @@ class App extends Component {
           dragSnap={86400000}
           defaultTimeEnd={defaultTimeEnd}
           onItemMove={this.handleItemMove}
-          timeSteps={{ day: 1, hour: 24, month: 1, year: 1 }}
+          // timeSteps={{ day: 1, hour: 24, month: 1 }}
           isInteractingWithItem
           itemRenderer={this.itemRenderer}
+          visibleTimeEnd={defaultTimeEnd}
+          visibleTimeStart={defaultTimeStart}
           onItemResize={this.handleItemResize}
         />
         <Modal

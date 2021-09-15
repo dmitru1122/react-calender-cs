@@ -1,21 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { editOneRequest, addOneRequest } from '../../redux/actions/index';
-import { useGetOneRequest } from '../../cusom-hooks/GetOneRequest';
-import Form from '../forms/FormRequest';
+import { addOneRequest } from '../../redux/actions/index';
+import Form from '../formCalendar/Form';
 
 const ModalBodyCs = (props) => {
-  const { type, id, description } = props;
+  const { type, description, action } = props;
   const dispatch = useDispatch();
 
   switch (type) {
     case 'edit': {
-      const listRequests = useGetOneRequest(id);
-      const handleEdit = (values) => {
-        dispatch(editOneRequest(values, id));
-      };
-      return <Form title='Edit Request' action={handleEdit} initialData={listRequests?.rowData[0]} />;
+      const purposes = { purpose: '' };
+      return <Form title='' action={action} initialData={purposes} />;
     }
     case 'add': {
       const handleAdd = (values, form) => {
@@ -33,13 +29,13 @@ const ModalBodyCs = (props) => {
 ModalBodyCs.propTypes = {
   type: PropTypes.string,
   description: PropTypes.string,
-  id: PropTypes.string,
+  action: PropTypes.func,
 };
 
 ModalBodyCs.defaultProps = {
   type: 'delete',
   description: null,
-  id: '',
+  action: () => {},
 };
 
 export default ModalBodyCs;

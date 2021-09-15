@@ -17,13 +17,13 @@ const Confirm = (props) => {
 
   return (
     <>
-      {type === 'delete' && <Buttons action={toggle} type={type} buttonLabel={buttonLabel} />}
+      {type !== 'notice' && <Buttons action={toggle} type={type} buttonLabel={buttonLabel} />}
       <Modal isOpen={modal} toggle={toggle} data-test='modal'>
         <ModalHeader toggle={toggle} data-testid='modal-header'>
           {title}
         </ModalHeader>
         <ModalBody>
-          <ModalBodyCs type={type} description={description} id={id} action={action} />
+          <ModalBodyCs type={type} description={description} id={id} />
         </ModalBody>
         <ModalFooter>
           {type === 'delete' && (
